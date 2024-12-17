@@ -1,5 +1,8 @@
 clean:
 	rm -rf ./allure-results
 
-allure-report:
+test:
+	poetry run pytest
+
+report:
 	poetry run allure serve ./allure-results

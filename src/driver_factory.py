@@ -39,10 +39,18 @@ def get_driver():
 
 def _chrome_options():
     options = webdriver.ChromeOptions()
+    # Disable the default browser check, do not prompt to set it as such
+    options.add_argument("--no-default-browser-check")
+    # Hide scrollbars from screenshots
+    options.add_argument("--hide-scrollbars")
+    # Disable the 2023+ search engine choice screen
+    options.add_argument("--disable-search-engine-choice-screen")
+    # Disable a few things considered not appropriate for automation
+    options.add_argument("--enable-automation")
     if HEADLESS:
+        # New, native Headless mode
         options.add_argument("--headless=new")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--no-sandbox")
+        # Often used in Lambda, Cloud Functions scenarios and Docker
         options.add_argument("--disable-dev-shm-usage")
     options.enable_bidi = False
     return options

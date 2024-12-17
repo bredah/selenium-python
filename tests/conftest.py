@@ -2,7 +2,6 @@
 
 import logging
 import os
-import platform
 
 import allure
 import pytest
@@ -53,7 +52,7 @@ def fixture_test():
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
-def pytest_runtest_makereport(item, call):
+def pytest_runtest_makereport(item):
     """
     Hook do pytest para capturar o relatório do teste e anexar a screenshot em caso de falha.
     """

@@ -1,13 +1,20 @@
-# pages/google_page.py
+"""pages/google_page.py"""
+
 from selenium.webdriver.common.by import By
 
-from .base_page import BasePage
+from pages.base_page import BasePage
+from pages.google import BASE_URL
 
 
 class GooglePage(BasePage):
+    """TBD"""
 
     # def __init__(self):
     #     super().__init__()
+
+    def open(self, url=None) -> None:
+        """TBD"""
+        super().open(url=f"{BASE_URL}/")
 
     def _accept_terms(self):
         button_accept_all = self.find_element((By.CSS_SELECTOR, "div > button:nth-of-type(2)"), 1)

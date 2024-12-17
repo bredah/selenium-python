@@ -1,5 +1,6 @@
-# test_google_search.py
-from tests.pages.google_page import GooglePage
+"""test_google_search.py"""
+
+from pages.google.google_page import GooglePage
 
 
 def test_google_search():

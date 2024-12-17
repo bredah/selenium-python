@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.1
+    hooks:
+      - id: autoflake
+        name: code convention - autflake
+        args: [
+          --in-place,
+          --expand-star-imports,
+          --remove-duplicate-keys,
+          --remove-unused-variables,
+          --remove-all-unused-imports
+          ]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: end-of-file-fixer
+        name: code convention - end of file fixer
+      - id: trailing-whitespace
+        name: code convention - trailing whitespace
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: code style - isort
+        args: [--resolve-all-configs]
+  - repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+      - id: black
+        name: code style - black

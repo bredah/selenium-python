@@ -82,7 +82,7 @@ limit-inference-results=100
 
 # List of plugins (as comma separated values of python module names) to load,
 # usually to register additional checkers.
-load-plugins=
+load-plugins=pylint.extensions.mccabe
 
 # Pickle collected data for later comparisons.
 persistent=yes
@@ -114,7 +114,6 @@ unsafe-load-any-extension=no
 
 # In verbose mode, extra non-checker-related info will be displayed.
 #verbose=
-
 
 [BASIC]
 
@@ -322,6 +321,10 @@ max-statements=50
 # Minimum number of public methods for a class (see R0903).
 min-public-methods=2
 
+# %s is too complex. The McCabe rating is %d Used when a method or function is
+# too complex based on McCabe Complexity Cyclomatic
+max-complexity=5
+
 
 [EXCEPTIONS]
 
@@ -345,7 +348,7 @@ indent-after-paren=4
 indent-string='    '
 
 # Maximum number of characters on a single line.
-max-line-length=100
+max-line-length=150
 
 # Maximum number of lines in a module.
 max-module-lines=1000
