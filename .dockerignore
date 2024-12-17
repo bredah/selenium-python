@@ -1,0 +1,18 @@
+# file
+.DS_Store
+.dockerignore
+.env
+.execution
+.gitignore
+.pre-commit-config.yaml
+.pylintrc
+docker-compose.yaml
+Dockerfile
+Makefile
+README.md
+# folder
+.git/
+.pytest_cache/
+.venv/
+.vscode/
+allure-results/
